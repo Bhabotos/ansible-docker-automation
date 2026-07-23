@@ -1,0 +1,7 @@
+---
+- name: Install Docker on Ubuntu
+  hosts: docker_servers
+  become: yes
+
+  roles:
+    - docker

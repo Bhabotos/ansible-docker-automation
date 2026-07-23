@@ -1,0 +1,9 @@
+---
+- name: Test Containers Role
+
+  hosts: docker_servers
+
+  become: true
+
+  roles:
+    - containers

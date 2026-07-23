@@ -1,0 +1,7 @@
+postgres_user: admin
+
+postgres_password: admin123
+
+postgres_db: mydb
+
+nginx_port: 80

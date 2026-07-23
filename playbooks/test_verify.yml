@@ -1,0 +1,7 @@
+---
+- name: Test Verify Role
+  hosts: docker_servers
+  become: true
+
+  roles:
+    - verify

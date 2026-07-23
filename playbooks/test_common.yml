@@ -1,0 +1,7 @@
+---
+- name: Test Common Role
+  hosts: docker_servers
+  become: true
+
+  roles:
+    - common

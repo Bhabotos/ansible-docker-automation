@@ -1,0 +1,11 @@
+---
+- name: Configure Ubuntu Server
+  hosts: docker_servers
+  become: true
+
+  roles:
+    - common
+    - docker
+    - docker_compose
+    - verify
+    - containers

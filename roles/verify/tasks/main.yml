@@ -1,0 +1,27 @@
+---
+- name: Check Docker Version
+  command: docker --version
+  register: docker_version
+  changed_when: false
+
+- name: Show Docker Version
+  debug:
+    var: docker_version.stdout
+
+- name: Check Docker Compose Version
+  command: docker compose version
+  register: compose_version
+  changed_when: false
+
+- name: Show Docker Compose Version
+  debug:
+    var: compose_version.stdout
+
+- name: Check Docker Service
+  command: systemctl is-active docker
+  register: docker_service
+  changed_when: false
+
+- name: Show Docker Service Status
+  debug:
+    var: docker_service.stdout

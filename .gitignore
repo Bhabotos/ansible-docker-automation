@@ -1,0 +1,7 @@
+*.retry
+*.pyc
+*.log
+*.swp
+*.tmp
+.vscode/
+.idea/

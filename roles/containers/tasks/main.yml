@@ -1,0 +1,15 @@
+---
+- name: Copy Docker Compose file
+  copy:
+    src: docker-compose.yml
+    dest: "/home/{{ ansible_user }}/docker-compose.yml"
+    mode: '0644'
+
+- name: Deploy containers
+  command: docker compose -f /home/bhabotos/docker-compose.yml up -d
+  register: compose_output
+  changed_when: "'Creating' in compose_output.stdout or 'Started' in compose_output.stdout"
+
+- name: Show deployment result
+  debug:
+    var: compose_output.stdout

@@ -1,0 +1,7 @@
+---
+- name: Test Docker Compose Role
+  hosts: docker_servers
+  become: true
+
+  roles:
+    - docker_compose

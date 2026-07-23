@@ -1,0 +1,15 @@
+---
+- name: Install Docker Compose Plugin
+  apt:
+    name: docker-compose-v2
+    state: present
+    update_cache: yes
+
+- name: Check Docker Compose Version
+  command: docker compose version
+  register: compose_version
+  changed_when: false
+
+- name: Show Docker Compose Version
+  debug:
+    var: compose_version.stdout
